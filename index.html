@@ -1,40 +1,430 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy — Zeros & Ones Studio</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 720px; margin: 60px auto; padding: 0 20px; line-height: 1.7; color: #333; }
-        h1 { font-size: 28px; margin-bottom: 8px; }
-        h2 { font-size: 18px; margin-top: 36px; color: #555; }
-        p { margin: 16px 0; }
-        .date { color: #888; font-size: 14px; margin-bottom: 40px; }
-        .contact { background: #f5f5f5; padding: 16px; border-radius: 8px; margin-top: 40px; }
-        a { color: #0070f3; }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pipeline Pulse — Know Your Numbers in Seconds</title>
+  <meta name="description" content="Import your sales CSV and see quota gaps, message variant health, and today's follow-up priorities. $9.99 one-time." />
+  <style>
+    /* ============================================================
+       TOKENS — Apple Design System
+       ============================================================ */
+    :root {
+      --black:       #000000;
+      --ink:         #1d1d1f;
+      --gray-mid:    #6e6e73;
+      --gray-soft:   #d2d2d7;
+      --gray-pale:   #f5f5f7;
+      --white:       #ffffff;
+      --blue:        #0071e3;
+      --blue-hover:  #0077ed;
+      --radius-sm:  8px;
+      --radius-md:  12px;
+      --radius-lg:  18px;
+      --font:       -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", Helvetica Neue, Arial, sans-serif;
+      --font-display: "SF Pro Display", "Inter Tight", -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font: 17px/1.5 var(--font);
+      color: var(--ink);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ============================================================
+       NAV
+       ============================================================ */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--gray-pale);
+      padding: 0 48px;
+      height: 52px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 15px; font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .nav-logo span { color: var(--blue); }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 13px; color: var(--ink); font-weight: 400; }
+    .nav-links a:hover { text-decoration: none; }
+    .btn-nav {
+      background: var(--blue); color: var(--white);
+      font-size: 13px; font-weight: 500;
+      padding: 7px 16px; border-radius: 980px;
+      transition: background 0.15s;
+    }
+    .btn-nav:hover { background: var(--blue-hover); text-decoration: none; }
+
+    /* ============================================================
+       HERO
+       ============================================================ */
+    .hero {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 96px 32px 112px;
+    }
+    .hero-eyebrow {
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 7vw, 72px);
+      font-weight: 600;
+      line-height: 1.06;
+      letter-spacing: -0.02em;
+      max-width: 14ch;
+      margin: 0 auto 20px;
+    }
+    .hero p {
+      font-size: 20px;
+      color: rgba(255,255,255,0.7);
+      max-width: 52ch;
+      margin: 0 auto 40px;
+      line-height: 1.45;
+    }
+    .hero-cta {
+      display: inline-flex; flex-direction: column; align-items: center; gap: 8px;
+    }
+    .btn-hero {
+      background: var(--blue); color: var(--white);
+      font: inherit; font-size: 17px; font-weight: 500;
+      padding: 14px 32px; border-radius: 980px;
+      border: none; cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-hero:hover { background: var(--blue-hover); }
+    .hero-sub { font-size: 12px; color: rgba(255,255,255,0.45); }
+
+    /* ============================================================
+       FEATURES
+       ============================================================ */
+    .features {
+      background: var(--gray-pale);
+      padding: 88px 32px;
+    }
+    .features-inner { max-width: 1000px; margin: 0 auto; }
+    .section-label {
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--gray-mid); margin-bottom: 12px;
+    }
+    .features h2 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 56px;
+      max-width: 22ch;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: var(--white);
+      border: 1px solid var(--gray-soft);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+    }
+    .feature-icon {
+      width: 40px; height: 40px;
+      background: var(--gray-pale);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+    .feature-card h3 {
+      font-family: var(--font-display);
+      font-size: 19px; font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      font-size: 14px;
+      color: var(--gray-mid);
+      line-height: 1.55;
+    }
+
+    /* ============================================================
+       HOW IT WORKS
+       ============================================================ */
+    .how {
+      background: var(--white);
+      padding: 88px 32px;
+    }
+    .how-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .how h2 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 600; letter-spacing: -0.02em;
+      margin-bottom: 48px; color: var(--ink);
+    }
+    .step-list { display: flex; flex-direction: column; gap: 0; text-align: left; }
+    .step {
+      display: flex; gap: 24px; align-items: flex-start;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--gray-soft);
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      font-family: var(--font-display);
+      font-size: 40px; font-weight: 600;
+      color: var(--gray-soft);
+      line-height: 1; min-width: 52px;
+    }
+    .step h3 {
+      font-family: var(--font-display);
+      font-size: 18px; font-weight: 600;
+      letter-spacing: -0.01em; color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .step p { font-size: 14px; color: var(--gray-mid); }
+
+    /* ============================================================
+       PRICING
+       ============================================================ */
+    .pricing {
+      background: var(--black);
+      color: var(--white);
+      padding: 88px 32px;
+      text-align: center;
+    }
+    .pricing-inner { max-width: 600px; margin: 0 auto; }
+    .pricing .section-label { color: var(--blue); }
+    .pricing h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 600; letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .pricing-sub { color: rgba(255,255,255,0.6); font-size: 17px; margin-bottom: 40px; }
+    .price-card {
+      background: #1d1d1f;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      display: inline-block; width: 100%; max-width: 360px;
+    }
+    .price-amount {
+      font-family: var(--font-display);
+      font-size: 64px; font-weight: 600;
+      letter-spacing: -0.03em; line-height: 1;
+      margin-bottom: 4px;
+    }
+    .price-amount small { font-size: 20px; font-weight: 400; opacity: 0.6; }
+    .price-desc { color: rgba(255,255,255,0.5); font-size: 14px; margin-bottom: 32px; }
+    .btn-price {
+      display: block; width: 100%;
+      background: var(--blue); color: var(--white);
+      font: inherit; font-size: 17px; font-weight: 500;
+      padding: 14px; border-radius: 980px;
+      border: none; cursor: pointer;
+      transition: background 0.15s; margin-bottom: 12px;
+    }
+    .btn-price:hover { background: var(--blue-hover); }
+    .price-note { font-size: 12px; color: rgba(255,255,255,0.35); }
+
+    /* ============================================================
+       CLOSING CTA
+       ============================================================ */
+    .closing {
+      background: var(--gray-pale);
+      padding: 80px 32px;
+      text-align: center;
+    }
+    .closing-inner { max-width: 560px; margin: 0 auto; }
+    .closing h2 {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 600; letter-spacing: -0.02em;
+      color: var(--ink); margin-bottom: 12px;
+    }
+    .closing p { color: var(--gray-mid); font-size: 16px; margin-bottom: 28px; }
+    .btn-closing {
+      display: inline-block;
+      background: var(--blue); color: var(--white);
+      font: inherit; font-size: 16px; font-weight: 500;
+      padding: 12px 28px; border-radius: 980px;
+      transition: background 0.15s;
+    }
+    .btn-closing:hover { background: var(--blue-hover); text-decoration: none; }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    footer {
+      background: var(--white);
+      border-top: 1px solid var(--gray-soft);
+      padding: 24px 32px;
+      text-align: center;
+      font-size: 12px; color: var(--gray-mid);
+    }
+    footer a { color: var(--gray-mid); }
+    footer a:hover { color: var(--ink); }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 640px) {
+      nav { padding: 0 20px; }
+      .nav-links a:not(.btn-nav) { display: none; }
+      .hero { padding: 72px 20px 80px; }
+      .features { padding: 64px 20px; }
+      .how { padding: 64px 20px; }
+      .pricing { padding: 64px 20px; }
+      .pricing-card-inner { padding: 28px; }
+      .closing { padding: 64px 20px; }
+    }
+  </style>
 </head>
 <body>
-    <h1>Privacy Policy</h1>
-    <p class="date">Last updated: May 14, 2026</p>
-    <p>Zeros & Ones Studio ("we," "us," or "our") operates the website <a href="https://zerosonesstudio.com">https://zerosonesstudio.com</a> and the mobile application Pipeline Pulse.</p>
-    <h2>Information We Collect</h2>
-    <p>Pipeline Pulse processes CSV files containing sales KPI data entirely on your device. <strong>We do not collect, store, transmit, or share any data you import into the app.</strong> Your data never leaves your device and is not accessible to us under any circumstances.</p>
-    <p>When you contact us for support, we collect only the information you voluntarily provide (such as your email address if you reach out). We use this solely to respond to your inquiry.</p>
-    <h2>How We Use Information</h2>
-    <p>We use the email address you provide when contacting us solely to respond to your support request. We do not use it for marketing, newsletters, or any other purpose without your explicit consent.</p>
-    <h2>Data Sharing</h2>
-    <p>We do not sell, trade, or rent your personal information to third parties. We may share information only when required by law or to protect our rights.</p>
-    <h2>Children's Privacy</h2>
-    <p>Our services are not directed to children under 13. We do not knowingly collect personal information from children under 13.</p>
-    <h2>Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
-    <h2>Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-    <div class="contact">
-        <strong>Zeros & Ones Studio</strong><br>
-        Email: <a href="mailto:hello@zerosonesstudio.com">hello@zerosonesstudio.com</a><br>
-        Website: <a href="https://zerosonesstudio.com">https://zerosonesstudio.com</a>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Pipeline<span>Pulse</span></div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="https://zerosonesstudio.gumroad.com" class="btn-nav">Get the App</a>
     </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">For freelancers &amp; solo sales teams</p>
+    <h1>Know your numbers<br/>in seconds.</h1>
+    <p>Import your sales CSV and see quota gaps, message variant health, and today&rsquo;s follow-up priorities — without opening a single spreadsheet.</p>
+    <div class="hero-cta">
+      <button class="btn-hero" onclick="window.location='https://zerosonesstudio.gumroad.com'">Get Pipeline Pulse &mdash; $9.99</button>
+      <span class="hero-sub">No login &bull; Works offline &bull; One-time purchase</span>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="features-inner">
+      <p class="section-label">What you get</p>
+      <h2>Everything you need for a sharp daily review</h2>
+      <div class="feature-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">&#8593;</div>
+          <h3>CSV Import in Seconds</h3>
+          <p>Drop your sales activity spreadsheet and Pipeline Pulse instantly parses it. No formatting required, no login, no cloud — just import and go.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">&#9679;</div>
+          <h3>Quota Gap Tracker</h3>
+          <p>See exactly how far you are from today&rsquo;s number. One glance tells you what&rsquo;s left to do before the day is done.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">&#8644;</div>
+          <h3>Message Variant Health</h3>
+          <p>Running A/B outreach? Pipeline Pulse scores each message variant and shows you which one deserves more volume — and which one needs a rewrite.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">&#128274;</div>
+          <h3>Local-First (No Login)</h3>
+          <p>Your data never leaves your device. No account required, no cloud sync, no privacy trade-offs. Just you and your sales data.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">&#10004;</div>
+          <h3>Copy-Ready Daily Summary</h3>
+          <p>Leave every review with a shareable status snapshot. Copy it, send it, save it. One tap — recovery summary ready for your boss or your team.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="how-inner">
+      <p class="section-label">How it works</p>
+      <h2>Three steps to clarity</h2>
+      <div class="step-list">
+
+        <div class="step">
+          <div class="step-num">01</div>
+          <div>
+            <h3>Drop your CSV</h3>
+            <p>Open Pipeline Pulse and drag in your sales spreadsheet — name, date, stage, message variant, and whatever else you track. Pipeline Pulse handles the rest.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">02</div>
+          <div>
+            <h3>See your numbers instantly</h3>
+            <p>Quota gap, stage breakdown, variant scores, and follow-up priorities appear immediately. No formulas, no filters, no tab-switching.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">03</div>
+          <div>
+            <h3>Copy your summary and go</h3>
+            <p>Tap to generate a plain-text recovery summary — ready to paste into Slack, email, or your daily notes. Then get back to selling.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="pricing-inner">
+      <p class="section-label">Simple pricing</p>
+      <h2>One price. Yours forever.</h2>
+      <p class="pricing-sub">No subscription. No unlock tiers. Just a sharp daily tool at a fair price.</p>
+      <div class="price-card" style="display:inline-block;">
+        <div class="price-amount">$9<small>.99</small></div>
+        <p class="price-desc">One-time purchase &bull; All future updates included</p>
+        <button class="btn-price" onclick="window.location='https://zerosonesstudio.gumroad.com'">Buy on Gumroad</button>
+        <p class="price-note">Secure checkout via Gumroad &bull; Instant download</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="closing">
+    <div class="closing-inner">
+      <h2>Stop guessing. Start closing.</h2>
+      <p>Pipeline Pulse turns your messy sales spreadsheet into a clear action plan — in seconds.</p>
+      <a href="https://zerosonesstudio.gumroad.com" class="btn-closing">Get Pipeline Pulse for $9.99</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Zeros &amp; Ones Studio &nbsp;&bull;&nbsp; <a href="mailto:hello@zerosonesstudio.com">Contact</a> &nbsp;&bull;&nbsp; <a href="/privacy">Privacy Policy</a> &nbsp;&bull;&nbsp; <a href="https://zerosonesstudio.gumroad.com">Gumroad</a></p>
+  </footer>
+
 </body>
 </html>
