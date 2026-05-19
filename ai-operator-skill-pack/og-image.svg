@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">AI Operator Skill Pack by Zeros &amp; Ones Studio</title>
+  <desc id="desc">A dark product card for the AI Operator Skill Pack.</desc>
+  <rect width="1200" height="630" fill="#0C0C0C"/>
+  <path d="M0 120H1200M0 240H1200M0 360H1200M0 480H1200M200 0V630M400 0V630M600 0V630M800 0V630M1000 0V630" stroke="#262626" stroke-width="1" opacity=".5"/>
+  <rect x="80" y="76" width="1040" height="478" rx="12" fill="#141414" stroke="#262626"/>
+  <text x="120" y="145" fill="#FBBF24" font-family="SF Mono, ui-monospace, monospace" font-size="22" letter-spacing="4">ZEROS &amp; ONES STUDIO</text>
+  <text x="120" y="274" fill="#FAFAFA" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="900">AI Operator</text>
+  <text x="120" y="358" fill="#FAFAFA" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="900">Skill Pack</text>
+  <text x="120" y="434" fill="#A1A1AA" font-family="Arial, Helvetica, sans-serif" font-size="30">Reusable SKILL.md workflows for agents that need to ship.</text>
+  <rect x="120" y="482" width="170" height="54" rx="8" fill="#F59E0B"/>
+  <text x="154" y="518" fill="#0C0C0C" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">$49 pack</text>
+</svg>
