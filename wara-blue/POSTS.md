@@ -15,7 +15,7 @@ Streaming/"""buy""" link placeholder: **https://www.youtube.com/watch?v=BlfSuc7x
 > Pre-save now — link in bio. #WaraBlue #PaperSuitcases #Afrobeats
 
 **TikTok (pair with 9:16 teaser)**
-> POV: your whole life fits in one paper suitcase. 🧳 "Paper Suitcases" — [DATE]. #afrobeats #newmusic #WaraBlue #paodcast
+> POV: your whole life fits in one paper suitcase. 🧳 "Paper Suitcases" — [DATE]. #afrobeats #newmusic #WaraBlue
 
 **X / Threads**
 > "Paper Suitcases" — new single, [DATE]. For everyone who left home to find one. 🧳 Pre-save: https://www.youtube.com/watch?v=BlfSuc7x1oY&list=OLAK5uy_nPc0SX3I5qweSUx-KJleg880wWC05tVMA
