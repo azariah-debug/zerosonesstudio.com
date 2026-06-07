@@ -21,15 +21,15 @@ about one family; it's about *every* family that ever packed a paper suitcase.
 These are built to stop the scroll. Each = one strong line + one visual.
 
 **A. The cold-open hook (TikTok/Reels — pair with the 9:16 clip)**
-> Text on screen (first 1.5s): "everything I own fits in one bag."
+> Text on screen (first 1.5s): "Paper suitcases, stitched with dust and prayer."
 > Caption: New Afrobeats that'll find you wherever you ran to. 🧳 *Paper Suitcases* — out now. #WaraBlue
 
 **B. The identity flex (carousel / X)**
 > "They call it migration. We call it survival set to a beat." 🌍
 > *Paper Suitcases* — Wara Blue. For the diaspora, by the diaspora.
 
-**C. The lyric quote card (NEEDS YOUR LINE — see lyric section)**
-> [BIG QUOTE: your hardest-hitting line] — over the key art.
+**C. The lyric quote card (use the quote-cards in /cover-marketing/quotes/)**
+> "No matter what the papers say, this earth is where we belong." — over the cover.
 > Caption: this line is the whole song. 🧳 #PaperSuitcases
 
 **D. The map flex (use the routes visual)**
@@ -42,24 +42,22 @@ These are built to stop the scroll. Each = one strong line + one visual.
 
 ---
 
-## 🎤 LYRIC PULL-QUOTES (fill these in — see note to you below)
+## 🎤 LYRIC PULL-QUOTES (locked — quote-cards built in /cover-marketing/quotes/)
 
-The most shareable thing you have is a *line people quote back at you.* Slot your
-strongest lines here and I'll build matching quote-card graphics (key art + the line).
+The most shareable thing you have is a *line people quote back at you.* These are the
+ones that hit hardest — each is built as a quote-card over the album cover.
 
-What makes a line "hit" for social (use these as selection filters):
-- It's **specific** ("a teddy bear and a passport") beats generic ("we had nothing").
-- It's a **whole feeling in ≤10 words** — fits on one screen, reads in 2 seconds.
-- It's **universal** — a Filipino nurse, a Syrian dad, a Nigerian student all nod.
-- It works as a **caption AND a tattoo** — that's the bar.
+| Slot | Use it for | The line | Card |
+|---|---|---|---|
+| **Hook** | TikTok cold-open / pinned tag | **"We are still here."** | `q_stillhere` |
+| **Anthem** | Chorus quote card (Post C) | **"No matter what the papers say, this earth is where we belong."** | `q_belong` |
+| **Hope** | Story / CTA / bridge | **"We are the seeds blown by the storm, but the roots are deep and strong."** | `q_seeds` |
+| **Gut-punch** | Dedication / pinned post | **"We ran from wars we didn't start, from debts we didn't sign."** | `q_wars` |
+| **Title line** | Teaser / announce | **"Stitched with dust and prayer."** | `q_dust` |
+| **Comment-driver** | Engagement post (ask: "does this hit home?") | **"Papa, why do they look at us like we don't belong to our name?"** | — |
 
-| Slot | Use it for | Your line |
-|---|---|---|
-| Hook line | TikTok cold-open text | `[ ____ ]` |
-| Chorus line | Quote card (Post C) | `[ ____ ]` |
-| Gut-punch line | Dedication / pinned post | `[ ____ ]` |
-| Hope line | Story / CTA | `[ ____ ]` |
-| Album tie-in | "if this hit, the album..." | `[ ____ ]` |
+> The comment-driver line is the most *relatable* (a child's voice) — perfect for a caption
+> that ends in a question to pull replies. Want it as a card too? Say the word.
 
 ---
 
@@ -78,6 +76,23 @@ What makes a line "hit" for social (use these as selection filters):
 | T+7 | Album tease — "Paper Suitcases was just the first bag." | key art + album hint |
 
 ---
+
+## 📖 THE SONG'S STORY (for press / EPK / caption depth)
+
+A three-act diaspora arc:
+1. **The departure & legacy of flight** — families leave with nothing but "paper suitcases
+   stitched with dust and prayer," tracing a map from Addis to Accra, Lagos to Asmara —
+   lives shaped by borders "drawn in rooms we never entered." Parents hush their children
+   in the dark: keep your head down, just go.
+2. **The reality of arrival** — trading the golden sun for "streets of stone," running from
+   "wars we didn't start," meeting cold stares on trains and "polite words wrapped in
+   policy." They build the cities, clean the floors — and remain "strangers at the door."
+3. **The weight of the question** — "Why are we here?" Now, as parents, they face the same
+   question from their own children, and answer with stories of the rivers and sun of home,
+   where their names are truly known. The song resolves on defiance: *"We are still here."*
+
+Use act 1 for the **announce/teaser**, act 2 for the **identity/justice** posts, act 3 for the
+**dedication** and **hope** posts.
 
 ## 🌍 ALBUM BRIDGE (sell the album, not just the single)
 
